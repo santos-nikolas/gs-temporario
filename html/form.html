@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/Design sem nome2.png">
+    <!-- <script src="../js/script.js"></script> -->
+    <title>Formulario TPN</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+            padding: 0;
+        }
+        html {
+            font-size: 62.5%;
+        }
+        .section-form {
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            width: 100%;
+            
+        }
+
+        .form-box{
+            width: 500px;
+            height: 650px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: #3a3a3a;
+            color: white;
+            border-radius: 2rem;
+            box-shadow: rgba(0, 0, 0, 0.541) 1rem 1rem;
+        }
+        .form h2 {
+            font-size: 4rem;
+            position: relative;
+            top: 0rem;
+            left: 16rem;
+            text-shadow: black 0px 10px;
+        }
+
+        .inputs{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .inputs input {
+            background-color: transparent;
+            outline: none;
+            width: 40rem;
+            margin-top: 6rem;
+            height: 5rem;
+            color: white;
+            visibility: visible;
+            text-align: left;
+            vertical-align: top;
+            border-radius: 1rem;
+        }
+        .inputs label{
+            font-size: 2rem;
+            position: absolute;
+            margin-top: 3.6rem;
+            left: 39.5vw;
+        }
+
+        .inputs button{
+            width: 400px;
+            height: 40px;
+            border-radius: 30px;
+            background-color: black;
+            color: white;
+            border: none;
+            outline: none;
+            position: relative;
+            top: 1.5rem;
+            cursor: pointer;
+        }
+
+        .span-form{
+            font-size: 1.5rem;
+            position: relative;
+            left: -6rem;
+            color: red;
+            top: 0.5rem;
+            visibility: hidden;
+        }
+
+        #span-nome{
+            left: -4rem;
+        }
+
+        #span-tel{
+            left: -8.5rem;
+        }
+
+        #span-email {
+            left: -12.5rem;
+        }
+
+
+    </style>
+</head>
+<body>
+    <section class="section-form">
+        <div class="form-box">
+            <form action="" class="form" id="form">
+                <h2>Sugestões</h2>
+                <div class="inputs">
+                    <label for="nome-form">Nome:</label>
+                    <input type="text" id="nome-form" placeholder="Digite seu nome...">
+                    <span class="span-form" id="span-nome">Digite um nome válido com no mínimo 3 caracteres!</span>
+                </div>
+                <div class="inputs">
+                    <label for="tel-form">Telefone:</label>
+                    <input type="tel" id="tel-form" maxlength="15" placeholder="(xx) xxxxx-xxxx">
+                    <span class="span-form" id="span-tel">Digite um número de telefone válido!</span>
+                </div>
+                <div class="inputs">
+                    <label for="email-form">Email:</label>
+                    <input type="email" id="email-form" placeholder="Digite seu email...">
+                    <span class="span-form" id="span-email">Digite um email válido!</span>
+                </div>
+                <div class="inputs">
+                    <label for="msg-form">Mensagem:</label>
+                    <input type="text" id="msg-form" placeholder="Nos escreva uma sugestão...">
+                    <span class="span-form">Mensagem deve ter no minímo 20 caracteres!</span>
+                </div>
+                <div class="inputs">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+        
+        
+<script>
+    const form = document.querySelector("#form")
+    const nameInput = document.querySelector("#nome-form")
+    const telInput = document.querySelector("#tel-form")
+    const emailInput = document.querySelector("#email-form")
+    const messageInput = document.querySelector("#msg-form")
+    const spans = document.querySelectorAll(".span-form")
+    
+    form.addEventListener("submit", (event)=> {
+        event.preventDefault()
+
+        // Verifica se o nome está preenchido e se é válido
+        if (nameInput.value === "" || nameInput.value.length <3 || !isNameValid(nameInput.value)) {
+            spans[0].style.visibility = "visible"
+            nameInput.style.border = "2px solid red"
+        }
+        else{
+            spans[0].style.visibility = "hidden"
+            nameInput.style.border = "2px solid green"
+        }
+        //verifica se o número está preenchido e se é válido
+        if (telInput.value === "" || telInput.value.length < 15 || !isTelValid(telInput.value)) {
+            spans[1].style.visibility = "visible"
+            telInput.style.border = "2px solid red"
+        }
+        else{
+            spans[1].style.visibility = "hidden"
+            telInput.style.border = "2px solid green"
+        }
+        // Verifica se o e-mail está preenchido e se é válido
+        if (emailInput.value === "" || !isEmailValid(emailInput.value)) {
+            spans[2].style.visibility = "visible"
+            emailInput.style.border = "2px solid red"
+        }
+        else{
+            spans[2].style.visibility = "hidden"
+            emailInput.style.border = "2px solid green"
+        }
+        // Verifica se o nome está preenchido e se é válido
+        if (messageInput.value === "" || messageInput.value.length <20) {
+            spans[3].style.visibility = "visible"
+            messageInput.style.border = "2px solid red"
+        }
+        else{
+            spans[3].style.visibility = "hidden"
+            messageInput.style.border = "2px solid green"
+        }
+
+        if (messageInput.value === "" && emailInput.value === "" && telInput.value === "" && nameInput.value === "") {
+            alert("Preencha todos os campos")
+        }
+        if ( nameInput.value !== "" && nameInput.value.length >= 3 && isNameValid(nameInput.value) && telInput.value !== "" && telInput.value.length >= 15 && isTelValid(telInput.value) && emailInput.value !== "" && isEmailValid(emailInput.value) && messageInput.value !== "" && messageInput.value.length >= 20) {
+            form.submit();
+        }
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+function isNameValid(name) {
+    const nameRegex = new RegExp(
+        /^[A-Za-z]+$/
+    )
+
+    if(nameRegex.test(name)) {
+        return true
+    }
+    else{
+        return false
+    }
+}
+
+
+
+
+// função que valida e-mail
+    function isEmailValid(email) {
+        // cria uma regex para validar email
+        const emailRegex = new RegExp(
+            // Exemplo de email valido -> usuario123@host.com.br
+            /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z{2,}$]/
+        );
+
+        if(emailRegex.test(email)) {
+            return true
+        }
+
+        else{
+            return false
+        }
+    }
+
+    function isTelValid(telefone) {
+        // cria uma regex para validar o telefone
+        const telRegex = new RegExp(
+             /^[()\d -]+$/
+        )
+
+        if(telRegex.test(telefone)) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+// Criação de máscara para o telefone
+
+    telInput.addEventListener("keypress", ()=>{
+    let telLength = telInput.value.length
+
+    console.log(telLength)
+    if (telLength === 0){
+        telInput.value += "("
+    }
+    if (telLength === 3) {
+        telInput.value += ") "
+    }
+    if (telLength === 10) {
+        telInput.value += "-"
+    }
+})
+
+
+
+</script>
+</body>
+</html>
