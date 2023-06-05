@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="icon" href="../img/Design sem nome2.png">
-    <script src="../js/script.js"></script>
+    <script src="../js/script-pasta-html.js" defer></script>
     <title>Produto</title>
 </head>
 <body>
@@ -45,12 +45,15 @@
         </nav>
     </header>
     
-    <div class="tema">
-        <input type="checkbox" name="btn-tema" id="btn-tema">
-        <label for="btn-tema">
-            <img id="imagem-tema" src="img/lua-icon-removebg-preview.png" alt="lua(dark-mode)">
-        </label>
-    </div>
+    <section id="tema-tempo">
+        <div class="tema">
+            <input type="checkbox" name="btn-tema" id="btn-tema">
+            <label for="btn-tema">
+                <img id="imagem-tema" src="../img/lua-icon-removebg-preview.png" alt="lua(dark-mode)">
+            </label>
+        </div>
+        <div id="data-hora"></div>
+    </section>
     
     <main class="container-produto">
         <div class="grow">
