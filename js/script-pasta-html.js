@@ -14,14 +14,14 @@ btn.addEventListener("click", () => {
   if (!modoEscuro) {
     modoEscuro = true;
     body.classList.add("dark");
-    imagemTema.src = 'img/sol-icon-removebg-preview.png';
+    imagemTema.src = '../img/sol-icon-removebg-preview.png';
     imagemTema.alt = 'sol(light-mode)';
-    logoApagado.src = 'img/Logo(SemFundo)padrao.png'
+    logoApagado.src = '../img/Logo(SemFundo)padrao.png'
   } else {
     modoEscuro = false;
     body.classList.remove("dark");
-    imagemTema.src = 'img/lua-icon-removebg-preview.png';
+    imagemTema.src = '../img/lua-icon-removebg-preview.png';
     imagemTema.alt = 'lua(dark-mode)';
-    logoApagado.src = 'img/Logo(SemFundo)preto.png'
+    logoApagado.src = '../img/Logo(SemFundo)preto.png'
   }
 });
