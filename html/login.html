@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/Design sem nome2.png">
+    <!-- <script src="../js/script.js"></script> -->
+    <!-- <link rel="stylesheet" href="../CSS/styles.css"> -->
+    <title>Formulario TPN</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+            padding: 0;
+        }
+        html {
+            font-size: 62.5%;
+        }
+        .section-form {
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            width: 100%;
+            
+        }
+
+        .form-box{
+            width: 500px;
+            height: 650px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: #3a3a3a;
+            color: white;
+            border-radius: 2rem;
+            box-shadow: rgba(0, 0, 0, 0.541) 1rem 1rem;
+        }
+
+        .form h2 {
+            font-size: 4rem;
+            position: relative;
+            top: -9rem;
+            left: 20rem;
+            text-shadow: black 0px 10px;
+        }
+
+        .inputs{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .inputs input {
+            background-color: transparent;
+            outline: none;
+            width: 40rem;
+            margin-top: 6rem;
+            height: 5rem;
+            color: white;
+            visibility: visible;
+            text-align: left;
+            vertical-align: top;
+            border-radius: 1rem;
+        }
+        .inputs label{
+            font-size: 2rem;
+            position: absolute;
+            margin-top: 3.6rem;
+            left: 39.5vw;
+        }
+
+        .inputs button{
+            width: 400px;
+            height: 40px;
+            border-radius: 30px;
+            background-color: black;
+            color: white;
+            border: none;
+            outline: none;
+            position: relative;
+            top: 1.5rem;
+            cursor: pointer;
+        }
+
+        .span-form{
+            font-size: 1.5rem;
+            position: relative;
+            left: -6rem;
+            color: red;
+            top: 0.5rem;
+            visibility: hidden;
+        }
+
+        #span-nome{
+            left: -4rem;
+        }
+
+        #span-tel{
+            left: -8.5rem;
+        }
+
+        #span-email {
+            left: -12.5rem;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="../img/Design sem nome2.png" alt="Logo TPGN">
+        <h1>TECHPULSE GLOBAL NETWORK</h1>
+        <h1 id="sigla">TPGN</h1>
+        <nav class="nav-menu">
+            <ul class="menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./problema.html">Problema</a></li>
+                <li><a href="./produto.html">Produto</a></li>
+                <li><a href="./impactos.html">Impactos</a></li>
+                <li><a id="pagina-atual" href="./pitch.html">Pitch</a></li>
+                <li><a href="./suporte.html">Suporte</a></li>
+            </ul>
+        </nav>
+
+        <div class="container-menu-mobile">
+            <button onclick="animar()" id="btn-menu">
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+            </button>
+        </div>
+
+        <nav class="nav-menu-mobile">
+            <ul class="menu-mobile"  id="menu-mobile">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./problema.html">Problema</a></li>
+                <li><a href="./produto.html">Produto</a></li>
+                <li><a href="./impactos.html">Impactos</a></li>
+                <li><a href="./pitch.html">Pitch</a></li>
+                <li><a href="./suporte.html">Suporte</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="section-form">
+        <div class="form-box">
+            <form action="" class="form" id="form">
+                <h2>Login</h2>
+                <div class="inputs">
+                    <label for="nome-form">Usuario:</label>
+                    <input type="text" id="nome-form" placeholder="Digite seu nome de usuário">
+                    <span class="span-form" id="span-nome">Digite o nome de usuário correto!</span>
+                </div>
+                <div class="inputs">
+                    <label for="tel-form">Senha:</label>
+                    <input type="tel" id="tel-form" maxlength="15" placeholder="digite sua senha">
+                    <span class="span-form" id="span-tel">Digite a senha correta!</span>
+                </div>
+                <div class="inputs">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+        
+        
+<script>
+    const form = document.querySelector("#form")
+    const nameInput = document.querySelector("#nome-form")
+    const passwordInput = document.querySelector("#senha-form")
+    
+    form.addEventListener("submit", (event)=> {
+        event.preventDefault()
+
+        // Verifica se o nome de usuário está preenchido e se é válido
+        if (nameInput.value !== "Admin" ) {
+            spans[0].style.visibility = "visible"
+            nameInput.style.border = "2px solid red"
+        }
+        else{
+            spans[0].style.visibility = "hidden"
+            nameInput.style.border = "2px solid green"
+        }
+        //verifica se a senha está preenchida e se é válida
+        if (passwordInput.value !== "123456") {
+            spans[1].style.visibility = "visible"
+            passwordInput.style.border = "2px solid red"
+        }
+        else{
+            spans[1].style.visibility = "hidden"
+            passwordInput.style.border = "2px solid green"
+        }
+
+        if (nameInput.value === "" && passwordInput.value === "" ) {
+            alert("Preencha todos os campos")
+        }
+        if ( nameInput.value === "Admin" && passwordInput.value === "123456") {
+            form.submit();
+        }
+    })
+</script>
+<footer>
+    <p>TechPulse Global Network ®</p>
+    <p>Endereço: Av. Paulista, 1106 - 7º andar</p>
+    <div class="icons">
+        <a  target="_blank" href="https://www.youtube.com/@TechPulseGN"><img id="youtube" src="../img/youtube-icon.png" alt="youtube: TechPulse GN"></a></p>
+        <a  href="#"><img id="instagram" src="../img/instagram-icon.png" alt="logo instagram"></a>
+        <a  href="#"><img id="whatsapp" src="../img/wpp-icon-removebg-preview (1).png" alt="logo whatsapp"></a>
+    </div>
+</footer>
+</body>
+</html>
