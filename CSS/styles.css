@@ -79,6 +79,7 @@ footer{
     flex-wrap: wrap;
     box-shadow: 0 -0.5rem 2rem black;
     margin-top: 5rem;
+    z-index: 5;
 }
 footer p,
 footer p a{
@@ -147,7 +148,8 @@ label img{
 
 #data-hora{
     font-size: 2rem;
-    width: 13vw;
+    max-width: 210px;
+    width: 100%;
     height: 5vh;
     background-color: black;
     color: white;
@@ -156,6 +158,10 @@ label img{
     align-items: center;
     justify-content: center;
     margin: 1rem 1rem;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1;
 }
 .dark #data-hora {
     background-color: white;
@@ -644,7 +650,6 @@ table {
     footer {
         margin-top: 20rem;
     }
-    
 }
 @media (max-width: 667px) {
     td, th{
@@ -652,5 +657,16 @@ table {
     }
     .titulo-tabela {
         font-size: 1.5rem;
+    }
+    
+}
+@media (max-width:617px) {
+    footer{
+        height: 30rem;
+    }
+}
+@media (max-width: 546px) {
+    footer{
+        justify-content: flex-start;
     }
 }
