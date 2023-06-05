@@ -43,7 +43,7 @@
             font-size: 4rem;
             position: relative;
             top: -9rem;
-            left: 20rem;
+            left: 16rem;
             text-shadow: black 0px 10px;
         }
 
@@ -69,10 +69,14 @@
             font-size: 2rem;
             position: absolute;
             margin-top: 3.6rem;
-            left: 39.5vw;
+            left: 48rem;
         }
 
-        .inputs button{
+        .inputs .botao{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
             width: 400px;
             height: 40px;
             border-radius: 30px;
@@ -81,32 +85,9 @@
             border: none;
             outline: none;
             position: relative;
-            top: 1.5rem;
+            top: 10rem;
             cursor: pointer;
         }
-
-        .span-form{
-            font-size: 1.5rem;
-            position: relative;
-            left: -6rem;
-            color: red;
-            top: 0.5rem;
-            visibility: hidden;
-        }
-
-        #span-nome{
-            left: -4rem;
-        }
-
-        #span-tel{
-            left: -8.5rem;
-        }
-
-        #span-email {
-            left: -12.5rem;
-        }
-
-
     </style>
 </head>
 <body>
@@ -149,17 +130,15 @@
             <form action="" class="form" id="form">
                 <h2>Login</h2>
                 <div class="inputs">
-                    <label for="nome-form">Usuario:</label>
-                    <input type="text" id="nome-form" placeholder="Digite seu nome de usuário">
-                    <span class="span-form" id="span-nome">Digite o nome de usuário correto!</span>
+                    <label for="login-form">Login:</label>
+                    <input type="text" id="login-form" placeholder="Digite seu nome de usuário">
                 </div>
                 <div class="inputs">
-                    <label for="tel-form">Senha:</label>
-                    <input type="tel" id="tel-form" maxlength="15" placeholder="digite sua senha">
-                    <span class="span-form" id="span-tel">Digite a senha correta!</span>
+                    <label for="senha-form">Senha:</label>
+                    <input type="password" id="senha-form"  placeholder="digite sua senha">
                 </div>
                 <div class="inputs">
-                    <button type="submit">Enviar</button>
+                    <buttom class="botao" type="submit" onclick="logar()">Logar</button>
                 </div>
             </form>
         </div>
@@ -167,39 +146,17 @@
         
         
 <script>
-    const form = document.querySelector("#form")
-    const nameInput = document.querySelector("#nome-form")
-    const passwordInput = document.querySelector("#senha-form")
-    
-    form.addEventListener("submit", (event)=> {
-        event.preventDefault()
-
-        // Verifica se o nome de usuário está preenchido e se é válido
-        if (nameInput.value !== "Admin" ) {
-            spans[0].style.visibility = "visible"
-            nameInput.style.border = "2px solid red"
-        }
-        else{
-            spans[0].style.visibility = "hidden"
-            nameInput.style.border = "2px solid green"
-        }
-        //verifica se a senha está preenchida e se é válida
-        if (passwordInput.value !== "123456") {
-            spans[1].style.visibility = "visible"
-            passwordInput.style.border = "2px solid red"
-        }
-        else{
-            spans[1].style.visibility = "hidden"
-            passwordInput.style.border = "2px solid green"
-        }
-
-        if (nameInput.value === "" && passwordInput.value === "" ) {
-            alert("Preencha todos os campos")
-        }
-        if ( nameInput.value === "Admin" && passwordInput.value === "123456") {
-            form.submit();
-        }
-    })
+function logar(){
+    const loginInput = document.querySelector("#login-form").value
+    const senhaInput = document.querySelector("#senha-form").value
+    if (loginInput == 'Admin' && senhaInput == 123456) {
+        alert('Sucesso!')
+        window.location.href = "https://www.unicef.org/brazil/comunicados-de-imprensa/relatorio-da-onu-numeros-globais-de-fome-subiram-para-cerca-de-828-milhoes-em-2021";
+    }
+    else{
+        alert('Usuário ou senha incorretos.')
+    }
+}
 </script>
 <footer>
     <p>TechPulse Global Network ®</p>
