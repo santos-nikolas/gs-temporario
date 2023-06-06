@@ -13,7 +13,6 @@ const btn = document.querySelector('#btn-tema');
 const body = document.body;
 const imagemTema = document.getElementById('imagem-tema');
 const logoApagado = document.querySelector('#logo-apagado');
-const dataHora = document.querySelector('#data-hora');
 let modoEscuro = false;
 btn.addEventListener("click", () => {
   if (!modoEscuro) {
@@ -36,6 +35,7 @@ btn.addEventListener("click", () => {
 
 
 // =============================== DATA E HORA ===============================
+const dataHora = document.querySelector('#data-hora');
 // Obtém a referência para o elemento HTML onde a data e hora serão exibidas
 var dataHoraElemento = document.getElementById('data-hora');
 
@@ -115,13 +115,14 @@ form.addEventListener("submit", (event)=> {
     if (messageInput.value === "" && emailInput.value === "" && telInput.value === "" && nameInput.value === "") {
         alert("Preencha todos os campos")
     }
+    // Verifica se todos os campos estão válidos e envia o formulário
     if ( nameInput.value !== "" && nameInput.value.length >= 3 && isNameValid(nameInput.value) && telInput.value !== "" && telInput.value.length >= 15 && isTelValid(telInput.value) && emailInput.value !== "" && isEmailValid(emailInput.value) && messageInput.value !== "" && messageInput.value.length >= 20) {
         form.submit();
     }
 })
 
 
-// função que valida nome
+// Função que valida nome
 function isNameValid(name) {
 const nameRegex = new RegExp(
     /^[A-Za-z]+$/
@@ -135,7 +136,7 @@ else{
 }
 }
 
-// função que valida e-mail
+// Função que valida e-mail
 function isEmailValid(email) {
     // cria uma regex para validar email
     const emailRegex = new RegExp(
@@ -151,7 +152,7 @@ function isEmailValid(email) {
         return false
     }
 }
-
+// Função que valida o telefone
 function isTelValid(telefone) {
     // cria uma regex para validar o telefone
     const telRegex = new RegExp(
@@ -166,8 +167,9 @@ function isTelValid(telefone) {
     }
 }
 
-// Criação de máscara para o telefone
 
+
+// Criação de máscara para o telefone
 telInput.addEventListener("keypress", ()=>{
 let telLength = telInput.value.length
 

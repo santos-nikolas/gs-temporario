@@ -1,5 +1,6 @@
 alert('Seja bem-vindo(a)!')
 
+// =============================== MENU MOBILE ===============================
 function animar() {
     const btnMenu = document.querySelector("#btn-menu")
     const menuDiv = document.querySelector("#menu-mobile")
@@ -7,11 +8,11 @@ function animar() {
     menuDiv.classList.toggle("abrir")
 }
 
+// =============================== DARK MODE ===============================
 const btn = document.getElementById('btn-tema');
 const body = document.body;
 const imagemTema = document.getElementById('imagem-tema');
 const logoApagado = document.querySelector('#logo-apagado');
-const dataHora = document.querySelector('#data-hora');
 let modoEscuro = false;
 btn.addEventListener("click", () => {
   if (!modoEscuro) {
@@ -31,6 +32,9 @@ btn.addEventListener("click", () => {
     logoApagado.src = 'img/Logo(SemFundo)preto.png'
   }
 });
+
+// =============================== DATA E HORA ===============================
+const dataHora = document.querySelector('#data-hora');
 // Obtém a referência para o elemento HTML onde a data e hora serão exibidas
 var dataHoraElemento = document.getElementById('data-hora');
 
@@ -58,7 +62,7 @@ setInterval(atualizarDataHora, 1000);
 
 
 
-
+// =============================== CARROSSEL ===============================
 const radio = document.querySelector(".manual-btn")
 let cont = 1
 
