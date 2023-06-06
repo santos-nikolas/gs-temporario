@@ -17,7 +17,7 @@
         html {
             font-size: 62.5%;
         }
-        .section-form {
+        .section-login {
             display: flex; 
             align-items: center;
             justify-content: center;
@@ -26,7 +26,7 @@
             
         }
 
-        .form-box{
+        .login-box{
             width: 500px;
             height: 650px;
             display: flex;
@@ -39,7 +39,7 @@
             box-shadow: rgba(0, 0, 0, 0.541) 1rem 1rem;
         }
 
-        .form h2 {
+        .login h2 {
             font-size: 4rem;
             position: relative;
             top: -9rem;
@@ -47,13 +47,13 @@
             text-shadow: black 0px 10px;
         }
 
-        .inputs{
+        .inputs-login{
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
         }
 
-        .inputs input {
+        .inputs-login input {
             background-color: transparent;
             outline: none;
             width: 40rem;
@@ -65,14 +65,14 @@
             vertical-align: top;
             border-radius: 1rem;
         }
-        .inputs label{
+        .inputs-login label{
             font-size: 2rem;
             position: absolute;
             margin-top: 3.6rem;
             left: 48rem;
         }
 
-        .inputs .botao{
+        .inputs-login .botao{
             display: flex;
             justify-content: center;
             align-items: center;
@@ -126,19 +126,19 @@
             </ul>
         </nav>
     </header>
-    <section class="section-form">
-        <div class="form-box">
-            <form action="" class="form" id="form">
+    <section class="section-login">
+        <div class="login-box">
+            <form action="" class="login" id="login">
                 <h2>Login</h2>
-                <div class="inputs">
+                <div class="inputs-login">
                     <label for="login-form">Login:</label>
                     <input type="text" id="login-form" placeholder="Digite seu nome de usuário">
                 </div>
-                <div class="inputs">
+                <div class="inputs-login">
                     <label for="senha-form">Senha:</label>
                     <input type="password" id="senha-form"  placeholder="digite sua senha">
                 </div>
-                <div class="inputs">
+                <div class="inputs-login">
                     <buttom class="botao" type="submit" onclick="logar()">Logar</button>
                 </div>
             </form>
