@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../img/Design sem nome2.png">
+    <link rel="stylesheet" href="../CSS/styles.css">
     <!-- <script src="../js/script.js"></script> -->
     <title>Formulario TPN</title>
     <style>
@@ -81,6 +82,7 @@
             position: relative;
             top: 1.5rem;
             cursor: pointer;
+            font-size: 2rem;
         }
 
         .span-form{
@@ -108,6 +110,42 @@
     </style>
 </head>
 <body>
+    <header>
+        <img src="../img/Design sem nome2.png" alt="Logo TPGN">
+        <h1>TECHPULSE GLOBAL NETWORK</h1>
+        <h1 id="sigla">TPGN</h1>
+        <nav class="nav-menu">
+            <ul class="menu">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./html/problema.html">Problema</a></li>
+                <li><a href="./html/produto.html">Produto</a></li>
+                <li><a href="./html/impactos.html">Impactos</a></li>
+                <li><a href="./html/pitch.html">Pitch</a></li>
+                <li><a href="./html/suporte.html">Suporte</a></li>
+            </ul>
+        </nav>
+
+        <div class="container-menu-mobile">
+            <button onclick="animar()" id="btn-menu">
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+            </button>
+        </div>
+
+        <nav class="nav-menu-mobile">
+            <ul class="menu-mobile"  id="menu-mobile">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./html/problema.html">Problema</a></li>
+                <li><a href="./html/produto.html">Produto</a></li>
+                <li><a href="./html/impactos.html">Impactos</a></li>
+                <li><a href="./html/pitch.html">Pitch</a></li>
+                <li><a href="./html/suporte.html">Suporte</a></li>
+                <li><a href="./html/login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <section class="section-form">
         <div class="form-box">
             <form action="" class="form" id="form">
@@ -138,6 +176,16 @@
             </form>
         </div>
     </section>
+
+    <footer>
+        <p>TechPulse Global Network ®</p>
+        <p>Endereço: Av. Paulista, 1106 - 7º andar</p>
+        <div class="icons">
+            <a  target="_blank" href="https://www.youtube.com/@TechPulseGN"><img id="youtube" src="../img/youtube-icon.png" alt="youtube: TechPulse GN"></a></p>
+            <a  href="#"><img id="instagram" src="../img/instagram-icon.png" alt="logo instagram"></a>
+            <a  href="#"><img id="whatsapp" src="../img/wpp-icon-removebg-preview (1).png" alt="logo whatsapp"></a>
+        </div>
+    </footer>
         
         
 <script>
