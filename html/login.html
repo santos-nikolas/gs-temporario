@@ -44,7 +44,7 @@
             font-size: 4rem;
             position: relative;
             top: -9rem;
-            left: 16rem;
+            left: 20rem;
             text-shadow: black 0px 10px;
         }
 
@@ -70,14 +70,14 @@
             font-size: 2rem;
             position: absolute;
             margin-top: 3.6rem;
-            left: 39.5vw;
+            left: 39vw;
         }
 
         .inputs-login .botao{
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 3rem;
+            font-size: 2rem;
             width: 400px;
             height: 40px;
             border-radius: 30px;
@@ -88,6 +88,15 @@
             position: relative;
             top: 10rem;
             cursor: pointer;
+        }
+
+        .span-login{
+            visibility: hidden;
+            font-size: 2rem;
+            color: red;
+            position: relative;
+            font-weight: bold;
+            top: 5rem;
         }
     </style>
 </head>
@@ -133,14 +142,15 @@
                 <h2>Login</h2>
                 <div class="inputs-login">
                     <label for="login-form">Login:</label>
-                    <input type="text" id="login-form" placeholder="Digite seu nome de usuário">
+                    <input type="text" id="login-form" placeholder="Digite seu nome de usuário...">
                 </div>
                 <div class="inputs-login">
                     <label for="senha-form">Senha:</label>
-                    <input type="password" id="senha-form"  placeholder="digite sua senha">
+                    <input type="password" id="senha-form"  placeholder="Digite sua senha...">
+                    <span class="span-login">Usuário ou senha incorretos!</span>
                 </div>
                 <div class="inputs-login">
-                    <buttom class="botao" type="submit" onclick="logar()">Logar</button>
+                    <buttom class="botao" type="submit" onclick="logar()">Entrar</button>
                 </div>
             </form>
         </div>
@@ -158,14 +168,19 @@
 </footer>
 <script>
 function logar(){
-    const loginInput = document.querySelector("#login-form").value
-    const senhaInput = document.querySelector("#senha-form").value
-    if (loginInput == 'Admin' && senhaInput == 123456) {
+    const loginInput = document.querySelector("#login-form")
+    const senhaInput = document.querySelector("#senha-form")
+    const spanLogin = document.querySelector(".span-login")
+    if (loginInput.value === 'Admin' && senhaInput.value === "123456") {
         alert('Sucesso!')
         window.location.href = "https://www.unicef.org/brazil/comunicados-de-imprensa/relatorio-da-onu-numeros-globais-de-fome-subiram-para-cerca-de-828-milhoes-em-2021";
+        loginInput.style.border = "2px solid green"
+        senhaInput.style.border = "2px solid green"
     }
     else{
-        alert('Usuário ou senha incorretos.')
+        loginInput.style.border = "2px solid red"
+        senhaInput.style.border = "2px solid red"
+        spanLogin.style.visibility = "visible"
     }
 }
 </script>
