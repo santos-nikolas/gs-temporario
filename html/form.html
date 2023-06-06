@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../img/Design sem nome2.png">
     <link rel="stylesheet" href="../CSS/styles.css">
-    <script src="../js/script-pasta-html.js"></script>
-
+    <script src="../js/pastaHtml.js" defer></script>
     <title>Formulario TPN</title>
     <style>
         *{
@@ -22,7 +21,7 @@
             display: flex; 
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
+            min-height: 97rem;
             width: 100%;
             
         }
@@ -39,7 +38,7 @@
             border-radius: 2rem;
             box-shadow: rgba(0, 0, 0, 0.541) 1rem 1rem;
             position: relative;
-            top: 15rem;
+            top: -10rem;
         }
         .form h2 {
             font-size: 4rem;
@@ -71,7 +70,7 @@
             font-size: 2rem;
             position: absolute;
             margin-top: 3.6rem;
-            left: 8.5vw;
+            left: 5rem;
         }
 
         .inputs button{
@@ -83,7 +82,7 @@
             border: none;
             outline: none;
             position: relative;
-            top: 1.5rem;
+            top: 0rem;
             cursor: pointer;
             font-size: 2rem;
         }
@@ -98,16 +97,23 @@
         }
 
         #span-nome{
-            left: -4rem;
+            left: -3rem;
         }
 
         #span-tel{
-            left: -8.5rem;
+            left: -8rem;
         }
 
         #span-email {
             left: -12.5rem;
         }
+
+        #span-msg {
+            left: -5rem;
+            top: 0;
+        }
+
+
 
 
     </style>
@@ -123,9 +129,12 @@
                 <li><a href="./problema.html">Problema</a></li>
                 <li><a href="./produto.html">Produto</a></li>
                 <li><a href="./impactos.html">Impactos</a></li>
-                <li><a id="pagina-atual" href="./pitch.html">Pitch</a></li>
-                <li><a href="./suporte.html">Suporte</a></li>
+                <li><a href="./pitch.html">Pitch</a></li>
+                <li><a id="pagina-atual" href="./suporte.html">Suporte</a></li>
             </ul>
+            <div>
+                <a href="./login.html">Login</a>
+            </div>
         </nav>
 
         <div class="container-menu-mobile">
@@ -149,6 +158,17 @@
         </nav>
     </header>
 
+    <section id="tema-tempo">
+        <div class="tema">
+            <input type="checkbox" name="btn-tema" id="btn-tema">
+            <label id="label-tema" for="btn-tema">
+                <img id="imagem-tema" src="../img/lua-icon-removebg-preview.png" alt="lua(dark-mode)">
+            </label>
+        </div>
+        <div id="data-hora"></div>
+    </section>
+
+
     <section class="section-form">
         <div class="form-box">
             <form action="" class="form" id="form">
@@ -171,24 +191,18 @@
                 <div class="inputs">
                     <label for="msg-form">Mensagem:</label>
                     <input type="text" id="msg-form" placeholder="Nos escreva uma sugestão...">
-                    <span class="span-form">Mensagem deve ter no minímo 20 caracteres!</span>
+                    <span class="span-form" id="span-msg">Mensagem deve ter no minímo 20 caracteres!</span>
                 </div>
                 <div class="inputs">
                     <button type="submit">Enviar</button>
                 </div>
             </form>
         </div>
-    </section>
 
-    <footer>
-        <p>TechPulse Global Network ®</p>
-        <p>Endereço: Av. Paulista, 1106 - 7º andar</p>
-        <div class="icons">
-            <a  target="_blank" href="https://www.youtube.com/@TechPulseGN"><img id="youtube" src="../img/youtube-icon.png" alt="youtube: TechPulse GN"></a></p>
-            <a  href="#"><img id="instagram" src="../img/instagram-icon.png" alt="logo instagram"></a>
-            <a  href="#"><img id="whatsapp" src="../img/wpp-icon-removebg-preview (1).png" alt="logo whatsapp"></a>
+        <div>
+            <img id="logo-apagado" src="../img/Logo(SemFundo).png" alt="Logo TPGN apagado">
         </div>
-    </footer>
+    </section>
         
     <footer>
         <p>TechPulse Global Network ®</p>
@@ -198,153 +212,7 @@
             <a  href="#"><img id="instagram" src="../img/instagram-icon.png" alt="logo instagram"></a>
             <a  href="#"><img id="whatsapp" src="../img/wpp-icon-removebg-preview (1).png" alt="logo whatsapp"></a>
         </div>
-        <div class="form-footer"><a href="./html/form.html">Nos envie uma mensagem!</a></div>
+        <div class="form-footer"><a href="./form.html">Nos envie uma mensagem!</a></div>
     </footer>
-
-<script>
-    const form = document.querySelector("#form")
-    const nameInput = document.querySelector("#nome-form")
-    const telInput = document.querySelector("#tel-form")
-    const emailInput = document.querySelector("#email-form")
-    const messageInput = document.querySelector("#msg-form")
-    const spans = document.querySelectorAll(".span-form")
-    
-    form.addEventListener("submit", (event)=> {
-        event.preventDefault()
-
-        // Verifica se o nome está preenchido e se é válido
-        if (nameInput.value === "" || nameInput.value.length <3 || !isNameValid(nameInput.value)) {
-            spans[0].style.visibility = "visible"
-            nameInput.style.border = "2px solid red"
-        }
-        else{
-            spans[0].style.visibility = "hidden"
-            nameInput.style.border = "2px solid green"
-        }
-        //verifica se o número está preenchido e se é válido
-        if (telInput.value === "" || telInput.value.length < 15 || !isTelValid(telInput.value)) {
-            spans[1].style.visibility = "visible"
-            telInput.style.border = "2px solid red"
-        }
-        else{
-            spans[1].style.visibility = "hidden"
-            telInput.style.border = "2px solid green"
-        }
-        // Verifica se o e-mail está preenchido e se é válido
-        if (emailInput.value === "" || !isEmailValid(emailInput.value)) {
-            spans[2].style.visibility = "visible"
-            emailInput.style.border = "2px solid red"
-        }
-        else{
-            spans[2].style.visibility = "hidden"
-            emailInput.style.border = "2px solid green"
-        }
-        // Verifica se o nome está preenchido e se é válido
-        if (messageInput.value === "" || messageInput.value.length <20) {
-            spans[3].style.visibility = "visible"
-            messageInput.style.border = "2px solid red"
-        }
-        else{
-            spans[3].style.visibility = "hidden"
-            messageInput.style.border = "2px solid green"
-        }
-
-        if (messageInput.value === "" && emailInput.value === "" && telInput.value === "" && nameInput.value === "") {
-            alert("Preencha todos os campos")
-        }
-        if ( nameInput.value !== "" && nameInput.value.length >= 3 && isNameValid(nameInput.value) && telInput.value !== "" && telInput.value.length >= 15 && isTelValid(telInput.value) && emailInput.value !== "" && isEmailValid(emailInput.value) && messageInput.value !== "" && messageInput.value.length >= 20) {
-            form.submit();
-        }
-    })
-
-
-
-
-
-
-
-
-
-
-
-
-
-function isNameValid(name) {
-    const nameRegex = new RegExp(
-        /^[A-Za-z]+$/
-    )
-
-    if(nameRegex.test(name)) {
-        return true
-    }
-    else{
-        return false
-    }
-}
-
-
-
-
-// função que valida e-mail
-    function isEmailValid(email) {
-        // cria uma regex para validar email
-        const emailRegex = new RegExp(
-            // Exemplo de email valido -> usuario123@host.com.br
-            /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z{2,}$]/
-        );
-
-        if(emailRegex.test(email)) {
-            return true
-        }
-
-        else{
-            return false
-        }
-    }
-
-    function isTelValid(telefone) {
-        // cria uma regex para validar o telefone
-        const telRegex = new RegExp(
-             /^[()\d -]+$/
-        )
-
-        if(telRegex.test(telefone)) {
-            return true
-        }
-        else {
-            return false
-        }
-    }
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-// Criação de máscara para o telefone
-
-    telInput.addEventListener("keypress", ()=>{
-    let telLength = telInput.value.length
-
-    console.log(telLength)
-    if (telLength === 0){
-        telInput.value += "("
-    }
-    if (telLength === 3) {
-        telInput.value += ") "
-    }
-    if (telLength === 10) {
-        telInput.value += "-"
-    }
-})
-
-
-
-</script>
 </body>
 </html>

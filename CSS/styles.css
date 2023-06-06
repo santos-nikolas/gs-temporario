@@ -42,11 +42,35 @@ header{
     color: white;
     line-height: 25rem;
     font-weight: bold;
+    border-radius: 1rem;
 }
 
 .menu li a:hover {
     background-color: #202020;
     
+}
+
+.nav-menu div {
+    max-width: 100px;
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 2rem;
+    position: relative;
+    top: -10rem;
+    left: 74.5rem;
+}
+
+.nav-menu div:hover{
+    background-color: #000;
+    transition: 0.5s;
+}
+
+.nav-menu div a {
+    font-size: 2.5rem;
+    color: white;
+    position: relative;
+    left: 1.6rem;
+
 }
 
 header img {

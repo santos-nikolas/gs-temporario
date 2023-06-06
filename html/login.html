@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../img/Design sem nome2.png">
-    <script src="../js/script-pasta-html.js"></script>
+    <script src="../js/pastaHtml.js" defer></script>
     <link rel="stylesheet" href="../CSS/styles.css">
     <title>Login TPN</title>
     <style>
@@ -21,10 +21,8 @@
             display: flex; 
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
+            min-height: 97rem;
             width: 100%;
-            position: relative;
-            top: 15rem;
         }
 
         .login-box{
@@ -38,6 +36,8 @@
             color: white;
             border-radius: 2rem;
             box-shadow: rgba(0, 0, 0, 0.541) 1rem 1rem;
+            position: relative;
+            top: -10rem;
         }
 
         .login h2 {
@@ -70,7 +70,7 @@
             font-size: 2rem;
             position: absolute;
             margin-top: 3.6rem;
-            left: 39vw;
+            left: 5rem;
         }
 
         .inputs-login .botao{
@@ -111,9 +111,12 @@
                 <li><a href="./problema.html">Problema</a></li>
                 <li><a href="./produto.html">Produto</a></li>
                 <li><a href="./impactos.html">Impactos</a></li>
-                <li><a id="pagina-atual" href="./pitch.html">Pitch</a></li>
-                <li><a href="./suporte.html">Suporte</a></li>
+                <li><a href="./pitch.html">Pitch</a></li>
+                <li><a id="pagina-atual" href="./suporte.html">Suporte</a></li>
             </ul>
+            <div>
+                <a href="./login.html">Login</a>
+            </div>
         </nav>
 
         <div class="container-menu-mobile">
@@ -136,6 +139,17 @@
             </ul>
         </nav>
     </header>
+
+    <section id="tema-tempo">
+        <div class="tema">
+            <input type="checkbox" name="btn-tema" id="btn-tema">
+            <label id="label-tema" for="btn-tema">
+                <img id="imagem-tema" src="../img/lua-icon-removebg-preview.png" alt="lua(dark-mode)">
+            </label>
+        </div>
+        <div id="data-hora"></div>
+    </section>
+
     <section class="section-login">
         <div class="login-box">
             <form action="" class="login" id="login">
@@ -154,36 +168,21 @@
                 </div>
             </form>
         </div>
+
+        <div>
+            <img id="logo-apagado" src="../img/Logo(SemFundo).png" alt="Logo TPGN apagado">
+        </div>
     </section>
         
-<footer>
-    <p>TechPulse Global Network ®</p>
-    <p>Endereço: Av. Paulista, 1106 - 7º andar</p>
-    <div class="icons">
-        <a  target="_blank" href="https://www.youtube.com/@TechPulseGN"><img id="youtube" src="../img/youtube-icon.png" alt="youtube: TechPulse GN"></a></p>
-        <a  href="#"><img id="instagram" src="../img/instagram-icon.png" alt="logo instagram"></a>
-        <a  href="#"><img id="whatsapp" src="../img/wpp-icon-removebg-preview (1).png" alt="logo whatsapp"></a> 
-    </div>
-    <div class="form-footer"><a href="./html/form.html">Nos envie uma mensagem!</a></div>
-</footer>
-<script>
-function logar(){
-    const loginInput = document.querySelector("#login-form")
-    const senhaInput = document.querySelector("#senha-form")
-    const spanLogin = document.querySelector(".span-login")
-    if (loginInput.value === 'Admin' && senhaInput.value === "123456") {
-        alert('Sucesso!')
-        window.location.href = "https://www.unicef.org/brazil/comunicados-de-imprensa/relatorio-da-onu-numeros-globais-de-fome-subiram-para-cerca-de-828-milhoes-em-2021";
-        loginInput.style.border = "2px solid green"
-        senhaInput.style.border = "2px solid green"
-    }
-    else{
-        loginInput.style.border = "2px solid red"
-        senhaInput.style.border = "2px solid red"
-        spanLogin.style.visibility = "visible"
-    }
-}
-</script>
-
+    <footer>
+        <p>TechPulse Global Network ®</p>
+        <p>Endereço: Av. Paulista, 1106 - 7º andar</p>
+        <div class="icons">
+            <a  target="_blank" href="https://www.youtube.com/@TechPulseGN"><img id="youtube" src="../img/youtube-icon.png" alt="youtube: TechPulse GN"></a></p>
+            <a  href="#"><img id="instagram" src="../img/instagram-icon.png" alt="logo instagram"></a>
+            <a  href="#"><img id="whatsapp" src="../img/wpp-icon-removebg-preview (1).png" alt="logo whatsapp"></a>
+        </div>
+        <div class="form-footer"><a href="./form.html">Nos envie uma mensagem!</a></div>
+    </footer>
 </body>
 </html>

@@ -56,3 +56,4 @@ atualizarDataHora();
 // Atualiza a data e hora a cada segundo
 setInterval(atualizarDataHora, 1000);
 
+
