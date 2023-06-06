@@ -1,3 +1,5 @@
+alert('Seja bem-vindo(a)!')
+
 function animar() {
     const btnMenu = document.querySelector("#btn-menu")
     const menuDiv = document.querySelector("#menu-mobile")

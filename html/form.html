@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../img/Design sem nome2.png">
     <link rel="stylesheet" href="../CSS/styles.css">
-    <!-- <script src="../js/script.js"></script> -->
+    <script src="../js/script-pasta-html.js"></script>
+
     <title>Formulario TPN</title>
     <style>
         *{
@@ -37,6 +38,8 @@
             color: white;
             border-radius: 2rem;
             box-shadow: rgba(0, 0, 0, 0.541) 1rem 1rem;
+            position: relative;
+            top: 15rem;
         }
         .form h2 {
             font-size: 4rem;
@@ -68,7 +71,7 @@
             font-size: 2rem;
             position: absolute;
             margin-top: 3.6rem;
-            left: 39.5vw;
+            left: 8.5vw;
         }
 
         .inputs button{
@@ -116,12 +119,12 @@
         <h1 id="sigla">TPGN</h1>
         <nav class="nav-menu">
             <ul class="menu">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./html/problema.html">Problema</a></li>
-                <li><a href="./html/produto.html">Produto</a></li>
-                <li><a href="./html/impactos.html">Impactos</a></li>
-                <li><a href="./html/pitch.html">Pitch</a></li>
-                <li><a href="./html/suporte.html">Suporte</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./problema.html">Problema</a></li>
+                <li><a href="./produto.html">Produto</a></li>
+                <li><a href="./impactos.html">Impactos</a></li>
+                <li><a id="pagina-atual" href="./pitch.html">Pitch</a></li>
+                <li><a href="./suporte.html">Suporte</a></li>
             </ul>
         </nav>
 
@@ -135,13 +138,13 @@
 
         <nav class="nav-menu-mobile">
             <ul class="menu-mobile"  id="menu-mobile">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./html/problema.html">Problema</a></li>
-                <li><a href="./html/produto.html">Produto</a></li>
-                <li><a href="./html/impactos.html">Impactos</a></li>
-                <li><a href="./html/pitch.html">Pitch</a></li>
-                <li><a href="./html/suporte.html">Suporte</a></li>
-                <li><a href="./html/login.html">Login</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./problema.html">Problema</a></li>
+                <li><a href="./produto.html">Produto</a></li>
+                <li><a href="./impactos.html">Impactos</a></li>
+                <li><a href="./pitch.html">Pitch</a></li>
+                <li><a href="./suporte.html">Suporte</a></li>
+                <li><a href="./login.html">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -187,7 +190,17 @@
         </div>
     </footer>
         
-        
+    <footer>
+        <p>TechPulse Global Network ®</p>
+        <p>Endereço: Av. Paulista, 1106 - 7º andar</p>
+        <div class="icons">
+            <a  target="_blank" href="https://www.youtube.com/@TechPulseGN"><img id="youtube" src="../img/youtube-icon.png" alt="youtube: TechPulse GN"></a></p>
+            <a  href="#"><img id="instagram" src="../img/instagram-icon.png" alt="logo instagram"></a>
+            <a  href="#"><img id="whatsapp" src="../img/wpp-icon-removebg-preview (1).png" alt="logo whatsapp"></a>
+        </div>
+        <div class="form-footer"><a href="./html/form.html">Nos envie uma mensagem!</a></div>
+    </footer>
+
 <script>
     const form = document.querySelector("#form")
     const nameInput = document.querySelector("#nome-form")

@@ -171,6 +171,19 @@ body.dark #label-tema{
     display: flex;
     justify-content: space-between;
 }
+.form-footer a{
+    width: 25rem;
+    height: 4rem;
+    /* width: 100%; */
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    background-color: red;
+    border-radius: 4rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 /* ====================================== MENU MOBILE ====================================== */
 
 .menu-mobile {
