@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="./img/Design sem nome2.png">
+    <script src="./js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
+    <title>Home</title>
+    <style>
+
+        section.slider{
+            margin: 0 auto;
+            width: 100%;
+            height: auto;
+            padding: 0 !important;
+        }
+
+        .slider-content{
+            width: 400%;
+            height: auto;
+            display: flex;
+        }
+
+        .slider-content input{
+            display: none;
+        }
+
+        .slide-box {
+            width: 25%;
+            height: auto;
+            position: relative;
+            text-align: center;
+            transition: 1s;
+        }
+
+        .img-desktop{
+            width: 100%;
+            /* max-width: 1800px; */
+            max-height: 600px;
+            height: 100%;
+
+        }
+
+        .nav-manual,
+        .nav-auto {
+            position: absolute;
+            width: 100%;
+            margin-top: 61rem; 
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-manual .manual-btn, .nav-auto div {
+            border: 1px solid black;
+            padding: 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-manual .manual-btn:not(:last-child),
+        .nav-auto div:not(:last-child){
+            margin-right: 1rem;
+        }
+
+        .nav-manual .manual-btn:hover{
+            background-color: black;
+        }
+
+        #radio1:checked ~ .nav-auto .auto-btn1,
+        #radio2:checked ~ .nav-auto .auto-btn2,
+        #radio3:checked ~ .nav-auto .auto-btn3,
+        #radio4:checked ~ .nav-auto .auto-btn4{
+            background-color: black;
+        }
+
+        #radio1:checked ~ .primeiro{
+            margin-left: 0%;
+        }
+
+        #radio2:checked ~ .primeiro{
+            margin-left: -25%;
+        }
+
+        #radio3:checked ~ .primeiro{
+            margin-left: -50%;
+        }
+
+        #radio4:checked ~ .primeiro{
+            margin-left: -75%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./img/Design sem nome2.png" alt="Logo TPGN">
+        <h1>TECHPULSE GLOBAL NETWORK</h1>
+        <h1 id="sigla">TPGN</h1>
+        <nav class="nav-menu">
+            <ul class="menu">
+                <li><a id="pagina-atual" href="./index.html">Home</a></li>
+                <li><a href="./html/problema.html">Problema</a></li>
+                <li><a href="./html/produto.html">Produto</a></li>
+                <li><a href="./html/impactos.html">Impactos</a></li>
+                <li><a href="./html/pitch.html">Pitch</a></li>
+                <li><a href="./html/suporte.html">Suporte</a></li>
+            </ul>
+        </nav>
+
+        <div class="container-menu-mobile">
+            <button onclick="animar()" id="btn-menu">
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+            </button>
+        </div>
+
+        <nav class="nav-menu-mobile">
+            <ul class="menu-mobile"  id="menu-mobile">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./html/problema.html">Problema</a></li>
+                <li><a href="./html/produto.html">Produto</a></li>
+                <li><a href="./html/impactos.html">Impactos</a></li>
+                <li><a href="./html/pitch.html">Pitch</a></li>
+                <li><a href="./html/suporte.html">Suporte</a></li>
+                <li><a href="./html/login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+<section class="slider">
+    <div class="slider-content">
+
+        <input type="radio" name="btn-radio" id="radio1">
+        <input type="radio" name="btn-radio" id="radio2">
+        <input type="radio" name="btn-radio" id="radio3">
+        <input type="radio" name="btn-radio" id="radio4">
+
+        <div class="slide-box primeiro">
+            <img class="img-desktop" src="./img/operation_of_ve_0-transformed.png" alt="Agricultura vertical">
+        </div>
+        <div class="slide-box">
+            <img class="img-desktop" src="./img/agricultura-vertical2.jpg" alt="Agricultura vertical">
+        </div>
+        <div class="slide-box">
+            <img class="img-desktop" src="./img/operation_of_ve_1-transformed.png" alt="Agricultura vertical">
+        </div>
+        <div class="slide-box">
+            <img class="img-desktop" src="./img/agricultura-vertical3.jpg" alt="Agricultura vertical">
+        </div>
+
+
+
+        <div class="nav-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+            <div class="auto-btn4"></div>
+        </div>
+
+        <div class="nav-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+        </div>
+        
+
+    </div>
+</section>
+
+
+    <footer>
+        <p>TechPulse Global Network ®</p>
+        <p>Endereço: Av. Paulista, 1106 - 7º andar</p>
+        <div class="icons">
+            <a  target="_blank" href="https://www.youtube.com/@TechPulseGN"><img id="youtube" src="img/youtube-icon.png" alt="youtube: TechPulse GN"></a></p>
+            <a  href="#"><img id="instagram" src="img/instagram-icon.png" alt="logo instagram"></a>
+            <a  href="#"><img id="whatsapp" src="img/wpp-icon-removebg-preview (1).png" alt="logo whatsapp"></a>
+        </div>
+    </footer>
+    
+
+
+    <script>
+
+        const radio = document.querySelector(".manual-btn")
+        let cont = 1
+
+        document.querySelector("#radio1").checked = true
+
+        setInterval(()=> {
+            proximaImg()
+        }, 5000)
+
+        function proximaImg() {
+            cont++
+
+            if(cont > 4) {
+                cont = 1
+            }
+
+            document.querySelector("#radio"+cont).checked = true
+        }
+
+    </script>
+</body>
+</html>
